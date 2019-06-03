@@ -1,14 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 11:56:23 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/03 14:07:58 by xrhoda           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
 
 #include <iostream>
 #include <string>
@@ -29,56 +25,92 @@ class Contact {
     
   public:
     void setData (){
-        std::cout<<"\n\tEnter First Name : ";
+        std::cout<<"\nEnter First Name : ";
         std::cin>>firstName;
-        std::cout<<firstName;
 
-        std::cout<<"\n\tEnter Last Name : ";
+        std::cout<<"\nEnter Last Name : ";
         std::cin>>lastName;
 
-        std::cout<<"\n\tEnter Nickname : ";
+        std::cout<<"\nEnter Nickname : ";
         std::cin>>nickName;
 
-        std::cout<<"\n\tEnter Login : ";
+        std::cout<<"\nEnter Login : ";
         std::cin>>login;
 
-        std::cout<<"\n\tEnter Postal Address : ";
+        std::cout<<"\nEnter Postal Address : ";
         std::cin>>postalAddress;
 
-        std::cout<<"\n\tEnter Email : ";
+        std::cout<<"\nEnter Email : ";
         std::cin>>email;
 
-        std::cout<<"\n\tEnter Phone Number : ";
+        std::cout<<"\nEnter Phone Number : ";
         std::cin>>phoneNumber;
 
-        std::cout<<"\n\tEnter Birthday : ";
+        std::cout<<"\nEnter Birthday : ";
         std::cin>>birthday;
 
-        std::cout<<"\n\tEnter Favourite Meal : ";
+        std::cout<<"\nEnter Favourite Meal : ";
         std::cin>>favMeal;
 
-        std::cout<<"\n\tEnter Underwear Colour : ";
+        std::cout<<"\nEnter Underwear Colour : ";
         std::cin>>underwearColour;
 
-        std::cout<<"\n\tEnter Darkest Secret : ";
+        std::cout<<"\nEnter Darkest Secret : ";
         std::cin>>darkestSecret;
     }
 
-    void getMinData(){
-        std::cout<<firstName<<"\t"<<lastName<<"\t"<<email<<"\t"<<phoneNumber<<std::endl;
+    void getMinData(int i){
+        std::cout<<"|"<<display(std::to_string(i))<<"|";
+        std::cout<<display(firstName)<<"|";
+        std::cout<<display(lastName)<<"|";
+        std::cout<<display(nickName)<<"|"<<std::endl;
+        // std::cout<<firstName<<"\t"<<lastName<<"\t"<<email<<"\t"<<phoneNumber<<std::endl;
     };
 
     void getAllData(){
-        std::cout<<firstName<<"\n"<<lastName<<"\n"<<nickName<<"\n"<<login<<"\n"<<postalAddress<<"\n"<<email<<"\n"<<phoneNumber<<"\n"<<birthday<<"\n"<<favMeal<<"\n"<<underwearColour<<"\n"<<darkestSecret<<"\n";
+        std::cout<<" First Name: "<<firstName
+                 <<"\n Last Name: "<<lastName
+                 <<"\n Nickname: "<<nickName
+                 <<"\n Login: "<<login
+                 <<"\n Postal Address: "<<postalAddress
+                 <<"\n Email: "<<email
+                 <<"\n Phone Number: "<<phoneNumber
+                 <<"\n Birthday: "<<birthday
+                 <<"\n Favourite Meal: "<<favMeal
+                 <<"\n Underwear Color: "<<underwearColour
+                 <<"\n Darkest Secret: "<<darkestSecret
+                 <<"\n";
+    }
+
+    std::string display(std::string str) {
+            int size = str.length() - 1;
+            std::string ret = "          ";
+            
+            if (size >= 10){
+                ret = str.substr(0,10);
+                ret[9] = '.';
+                return ret;
+            }
+            for (int i = 9; i >= 0; i--, size--){
+                if (size < 0)
+                    break;
+                ret[i] = str[size];
+            }
+            return (ret);
     }
 
 };
 
-bool is_number(const std::string& s){
-    std::string::const_iterator it = s.begin();
-    while (it != s.end() && std::isdigit(*it)) 
-        ++it;
-    return !s.empty() && it == s.end();
+bool is_number(const std::string s){
+    int len = s.length();
+    int i = 0;
+
+    while (i < len){
+        if (std::isdigit(s[i])){}
+        else return false;
+        i++;
+    }
+    return true;
 }
 
 int main() {
@@ -96,18 +128,21 @@ int main() {
         }
         else if (sInput == "ADD")
         {
-            i++;
-            Contact oContact;
-            oContact.setData();
-            Contacts[i] = oContact;
+            if (i < 9){
+                i++;
+                Contact oContact;
+                oContact.setData();
+                Contacts[i] = oContact;
+            }
             sInput = "";
         }
         else if (sInput == "SEARCH")
         {
+            std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
             for (int j = 0; j <= i; ++j){
-                std::cout<< "[" << j << "] "; 
-                Contacts[j].getMinData();
+                Contacts[j].getMinData(j);
             }
+            std::cout << "Choose an index to display a contact's full details: ";
             std::string sSearchInput;
             std::cin >> sSearchInput;
             if (is_number(sSearchInput)){
