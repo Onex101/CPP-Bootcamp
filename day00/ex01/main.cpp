@@ -26,37 +26,37 @@ class Contact {
   public:
     void setData (){
         std::cout<<"\nEnter First Name : ";
-        std::cin>>firstName;
+        std::getline(std::cin, firstName);
 
         std::cout<<"\nEnter Last Name : ";
-        std::cin>>lastName;
+        std::getline(std::cin, lastName);
 
         std::cout<<"\nEnter Nickname : ";
-        std::cin>>nickName;
+        std::getline(std::cin, nickName);
 
         std::cout<<"\nEnter Login : ";
-        std::cin>>login;
+        std::getline(std::cin, login);
 
         std::cout<<"\nEnter Postal Address : ";
-        std::cin>>postalAddress;
+        std::getline(std::cin, postalAddress);
 
         std::cout<<"\nEnter Email : ";
-        std::cin>>email;
+        std::getline(std::cin, email);
 
         std::cout<<"\nEnter Phone Number : ";
-        std::cin>>phoneNumber;
+        std::getline(std::cin, phoneNumber);
 
         std::cout<<"\nEnter Birthday : ";
-        std::cin>>birthday;
+        std::getline(std::cin, birthday);
 
         std::cout<<"\nEnter Favourite Meal : ";
-        std::cin>>favMeal;
+        std::getline(std::cin, favMeal);
 
         std::cout<<"\nEnter Underwear Colour : ";
-        std::cin>>underwearColour;
+        std::getline(std::cin, underwearColour);
 
         std::cout<<"\nEnter Darkest Secret : ";
-        std::cin>>darkestSecret;
+        std::getline(std::cin, darkestSecret);
     }
 
     void getMinData(int i){
@@ -83,7 +83,7 @@ class Contact {
     }
 
     std::string display(std::string str) {
-            int size = str.length() - 1;
+            int size = str.length();
             std::string ret = "          ";
             
             if (size >= 10){
@@ -91,6 +91,7 @@ class Contact {
                 ret[9] = '.';
                 return ret;
             }
+            size--;
             for (int i = 9; i >= 0; i--, size--){
                 if (size < 0)
                     break;
@@ -120,7 +121,8 @@ int main() {
     while (!exit){   
         std::cout << "Choose an input: ADD, SEARCH, EXIT" << std::endl;
         std::string sInput;
-        std::cin >> sInput;
+        std::getline(std::cin, sInput);
+        // std::cin >> sInput;
         if (sInput == "EXIT")
         {
             sInput = "";
@@ -144,7 +146,7 @@ int main() {
             }
             std::cout << "Choose an index to display a contact's full details: ";
             std::string sSearchInput;
-            std::cin >> sSearchInput;
+            std::getline(std::cin, sSearchInput);
             if (is_number(sSearchInput)){
                 int iVal;
                 iVal = std::stoi(sSearchInput);
