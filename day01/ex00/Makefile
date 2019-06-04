@@ -6,14 +6,14 @@
 #    By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 08:28:51 by xrhoda            #+#    #+#              #
-#    Updated: 2019/06/04 11:22:02 by xrhoda           ###   ########.fr        #
+#    Updated: 2019/06/04 11:57:08 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     = phonebook
+NAME     = ponies
 
-SRCS     = Contact.cpp main.cpp
-HDRS     = Contact.hpp
+SRCS     = Pony.cpp main.cpp
+HDRS     = Pony.hpp
 OBJS     = $(SRCS:%.cpp=%.o)
 
 CXX      = clang++
@@ -36,4 +36,3 @@ fclean: clean
 re:	fclean all
 
 .PHONY: all clean fclean format re
-	
