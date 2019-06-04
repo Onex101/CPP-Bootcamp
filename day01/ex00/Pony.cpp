@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Pony.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 11:36:38 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/04 11:55:54 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/04 17:11:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Pony::Pony(std::string name, std::string colour, int age)
 
 Pony::~Pony(void)
 {
+    std::cout << "Pony " << getName() << " says bye" << std::endl;
     return ;
 }
 

@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 11:39:51 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/04 17:13:27 by marvin           ###   ########.fr       */
+/*   Created: 2019/06/04 17:01:29 by marvin            #+#    #+#             */
+/*   Updated: 2019/06/04 17:01:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include <iostream>
+#include <string>
 
-void ponyOnTheHeap(){
-    Pony *oPony = new Pony("Test", "Test", 1);
-    oPony->prntDetails();
-    delete oPony;
-}
+int main(void) {
 
-void ponyOnTheStack(){
-    Pony oPony;
-    oPony.setAge(2);
-    oPony.setColour("Test2");
-    oPony.setName("Test2");
-    oPony.prntDetails();
-}
+	std::string str = "HI THIS IS BRAIN";
+	std::string &refString = str;
+	std::string *pntrString = &str;
 
-int main(){
-    ponyOnTheHeap();
-    ponyOnTheStack();
-    return (0);
+	std::cout << "Reference String : " << refString << std::endl;
+	std::cout << "Pointer String : " << *pntrString << std::endl;
+
+	return (0);
 }
