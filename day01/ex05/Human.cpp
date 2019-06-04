@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 11:59:42 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/04 17:20:08 by marvin           ###   ########.fr       */
+/*   Created: 2019/06/04 17:21:29 by marvin            #+#    #+#             */
+/*   Updated: 2019/06/04 17:21:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Human.hpp"
+#include "Brain.hpp"
 
-void memoryLeak() 
+Human::Human()
 {
-	std::string*    panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
+	return;
+}
 
-	delete panthere;
+Brain &Human::getBrain()
+{
+	return this->brain;
+}
+
+std::string	Human::identify()
+{
+	return	this->brain.identify();
 }

@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 11:59:42 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/04 17:20:08 by marvin           ###   ########.fr       */
+/*   Created: 2019/06/04 17:25:01 by marvin            #+#    #+#             */
+/*   Updated: 2019/06/04 17:25:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Brain.hpp"
 
-void memoryLeak() 
+Brain::Brain()
 {
-	std::string*    panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
+	return;
+}
 
-	delete panthere;
+Brain::~Brain()
+{
+	return;
+}
+
+std::string	Brain::identify()
+{
+	std::stringstream address;
+	address << this;
+	return (address.str());
 }
