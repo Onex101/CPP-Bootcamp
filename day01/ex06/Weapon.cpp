@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 17:25:01 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 06:56:24 by xrhoda           ###   ########.fr       */
+/*   Created: 2019/06/05 07:19:46 by xrhoda            #+#    #+#             */
+/*   Updated: 2019/06/05 07:55:55 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Weapon.hpp"
 
-Brain::Brain()
+Weapon::Weapon(/* args */)
 {
-	return;
 }
 
-Brain::~Brain()
+Weapon::Weapon(std::string type)
 {
-	return;
+    setType(type);
 }
 
-Brain	*Brain::identify()
+Weapon::~Weapon()
 {
-	return (this);
 }
+
+const std::string Weapon::getType(){
+    return this->type;
+}
+
+void Weapon::setType(std::string type){
+    this->type = type;
+}
+

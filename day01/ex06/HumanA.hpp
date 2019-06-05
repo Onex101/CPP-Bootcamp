@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 17:25:01 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 06:56:24 by xrhoda           ###   ########.fr       */
+/*   Created: 2019/06/05 07:32:23 by xrhoda            #+#    #+#             */
+/*   Updated: 2019/06/05 08:35:50 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#ifndef HUMANA_H
+# define HUMANA_H
+#include "Weapon.hpp"
 
-Brain::Brain()
+class HumanA
 {
-	return;
-}
+    private:
+        Weapon& oWeapon;
+        std::string name;
+    public:
+        HumanA();
+        ~HumanA();
+        HumanA(std::string, Weapon&);
+        void attack();
+        void setName(std::string);
+};
 
-Brain::~Brain()
-{
-	return;
-}
-
-Brain	*Brain::identify()
-{
-	return (this);
-}
+#endif

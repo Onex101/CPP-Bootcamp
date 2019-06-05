@@ -5,18 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 17:17:31 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 07:00:51 by xrhoda           ###   ########.fr       */
+/*   Created: 2019/06/05 07:48:22 by xrhoda            #+#    #+#             */
+/*   Updated: 2019/06/05 08:39:30 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Brain.hpp"
-#include "Human.hpp"
+#include "HumanB.hpp"
+#include "HumanA.hpp"
 
-int	main()
+int main()
 {
-	Human bob;
-	std::cout << bob.identify() << std::endl;
-	std::cout << bob.getBrain().identify() << std::endl;
+    {
+        Weapon club = Weapon("Crude spiked club");
+
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
 }

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 17:25:01 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 06:56:24 by xrhoda           ###   ########.fr       */
+/*   Created: 2019/06/05 07:58:08 by xrhoda            #+#    #+#             */
+/*   Updated: 2019/06/05 08:39:04 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "HumanB.hpp"
 
-Brain::Brain()
+HumanB::HumanB(std::string s): name(s)
 {
-	return;
 }
 
-Brain::~Brain()
+void HumanB::setWeapon(Weapon& w)
 {
-	return;
+    this->oWeapon = &w;
+    return ;
 }
 
-Brain	*Brain::identify()
-{
-	return (this);
+void HumanB::attack(){
+    std::cout << name << " attacks with their " << oWeapon->getType() << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:18:08 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/04 17:18:08 by marvin           ###   ########.fr       */
+/*   Updated: 2019/06/05 07:01:14 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ class Human
 		Brain brain;
 		Human();
 		Brain &getBrain();
-		std::string	identify();
+		Brain *identify();
 };
 #endif

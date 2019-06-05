@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:21:29 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/04 17:21:29 by marvin           ###   ########.fr       */
+/*   Updated: 2019/06/05 07:01:11 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Brain &Human::getBrain()
 	return this->brain;
 }
 
-std::string	Human::identify()
+Brain *Human::identify()
 {
 	return	this->brain.identify();
 }
