@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:24:25 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 06:56:31 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/05 13:57:52 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include <string>
 # include <sstream>
 
-class	Brain
+ class	Brain
 {
 	public:
 		Brain();
 		~Brain();
-		Brain	*identify();
+		std::string	identify();
 };
-#endif
+#endif 

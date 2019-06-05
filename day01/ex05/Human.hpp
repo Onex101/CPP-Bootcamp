@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:18:08 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 07:01:14 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/05 12:47:50 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define HUMAN_H
 # include "Brain.hpp"
 
-class Human
+ class Human
 {		
 	public:
 		Brain brain;
 		Human();
 		Brain &getBrain();
-		Brain *identify();
+		std::string	identify();
 };
-#endif
+#endif 

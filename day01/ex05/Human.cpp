@@ -6,24 +6,24 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:21:29 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 07:01:11 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/05 12:47:48 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Human.hpp"
 #include "Brain.hpp"
 
-Human::Human()
+ Human::Human()
 {
 	return;
 }
 
-Brain &Human::getBrain()
+ Brain &Human::getBrain()
 {
 	return this->brain;
 }
 
-Brain *Human::identify()
+ std::string	Human::identify()
 {
 	return	this->brain.identify();
 }

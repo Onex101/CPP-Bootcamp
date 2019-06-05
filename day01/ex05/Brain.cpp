@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:25:01 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 06:56:24 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/05 12:47:45 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ Brain::~Brain()
 	return;
 }
 
-Brain	*Brain::identify()
+std::string	Brain::identify()
 {
-	return (this);
-}
+	std::stringstream address;
+	address << this;
+	return (address.str());
+} 
