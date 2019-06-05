@@ -28,4 +28,6 @@ class Fixed
         void    setRawBits(int const);
 };
 
+std::ostream &operator<<(std::ostream &out, Fixed const &rhs);
+
 #endif

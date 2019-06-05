@@ -13,6 +13,8 @@
 #ifndef FIXED_CLASS_HPP
 # define FIXED_CLASS_HPP
 
+#include <iostream>
+
 class Fixed
 {
     private:
@@ -26,12 +28,13 @@ class Fixed
         Fixed(const float);
         Fixed(const Fixed &other);
         Fixed   &operator=(const Fixed &other);
-        Fixed   &operator<<(const Fixed &other);
         int     getRawBits(void) const;
         const int getFracBits(void);
         void    setRawBits(int const);
-        float   toFloat(void) const{};
-        int     toInt(void) const{};
+        float   toFloat(void) const{return this->_fixedPointValue / (float)(1 << _fracBits);};
+        int     toInt(void) const{return this->_fixedPointValue >> _fracBits;};
 };
+
+std::ostream &operator<<(std::ostream &out, Fixed const &rhs);
 
 #endif
