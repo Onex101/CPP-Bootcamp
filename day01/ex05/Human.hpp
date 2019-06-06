@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:18:08 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/05 12:47:50 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/06 06:31:17 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 # include "Brain.hpp"
 
  class Human
-{		
-	public:
+{	
+	private:
 		Brain brain;
+	public:
 		Human();
 		Brain &getBrain();
 		std::string	identify();

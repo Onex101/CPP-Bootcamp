@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 13:02:20 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/04 16:44:40 by marvin           ###   ########.fr       */
+/*   Updated: 2019/06/06 06:28:30 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Zombie.hpp"
 
 class ZombieHorde{
-	public:
+	private:
 		Zombie	*horde;
 		int		sizeOfHorde;
 
