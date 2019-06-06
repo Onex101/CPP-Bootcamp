@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:04:31 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/05 13:55:03 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/06 13:50:31 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,18 @@ Fixed::Fixed(const Fixed &other){
 }
 
 Fixed::Fixed(const int i){
-    this->_fixedPointValue = i << _fracBits;
+    if (i < 0)
+        this->_fixedPointValue = 0;
+    else
+        this->_fixedPointValue = i << _fracBits;
     return ;
 }
 
 Fixed::Fixed(const float f){
-    this->_fixedPointValue = (int)roundf((f * (double)(1 << _fracBits)));
+    if (f < 0)
+        this->_fixedPointValue = 0;
+    else
+        this->_fixedPointValue = (int)roundf((f * (double)(1 << _fracBits)));
     return ;
 }
 
@@ -72,12 +78,10 @@ void Fixed::setRawBits(int const raw)
     return ;
 }
 
-// float Fixed::toFloat(void) const{
-    
-//     return this->_fixedPointValue / (float)(1<<Fixed::_fixedPointValue);
-// }
+float Fixed::toFloat(void) const{
+    return this->_fixedPointValue / (float)(1<<Fixed::_fixedPointValue);
+}
 
-// int Fixed::toInt() const
-// {
-// 	return this->_fixedPointValue >> _fracBits;
-// }
+int Fixed::toInt() const{
+	return this->_fixedPointValue >> _fracBits;
+}

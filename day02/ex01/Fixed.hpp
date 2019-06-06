@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:04:27 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/05 13:46:33 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/06 13:50:23 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class Fixed
         int     getRawBits(void) const;
         const int getFracBits(void);
         void    setRawBits(int const);
-        float   toFloat(void) const{return this->_fixedPointValue / (float)(1 << _fracBits);};
-        int     toInt(void) const{return this->_fixedPointValue >> _fracBits;};
+        float   toFloat(void) const;
+        int     toInt(void) const;
 };
 
 std::ostream &operator<<(std::ostream &out, Fixed const &rhs);

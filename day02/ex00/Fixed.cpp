@@ -6,14 +6,12 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:04:31 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/05 11:07:52 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/06 13:43:20 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-
-const int	_fracBits = 8;
 
 Fixed::Fixed(void){
     std::cout << "Default constructor called" << std::endl;
