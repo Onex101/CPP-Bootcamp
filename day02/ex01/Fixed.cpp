@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:04:31 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/06 13:50:31 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/07 07:18:01 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,6 @@ int Fixed::getRawBits(void) const{
     return (this->_fixedPointValue);
 }
 
-const int Fixed::getFracBits(void){
-    std::cout << "getFracBits member function called" << std::endl;
-    return (this->_fracBits);
-}
-
 void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
@@ -79,7 +74,7 @@ void Fixed::setRawBits(int const raw)
 }
 
 float Fixed::toFloat(void) const{
-    return this->_fixedPointValue / (float)(1<<Fixed::_fixedPointValue);
+    return this->_fixedPointValue / (float)(1<<Fixed::_fracBits);
 }
 
 int Fixed::toInt() const{

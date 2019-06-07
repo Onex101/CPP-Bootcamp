@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:04:27 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/06 13:50:23 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/07 07:16:52 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Fixed
         Fixed(const Fixed &other);
         Fixed   &operator=(const Fixed &other);
         int     getRawBits(void) const;
-        const int getFracBits(void);
         void    setRawBits(int const);
         float   toFloat(void) const;
         int     toInt(void) const;

@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:04:31 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/06 13:51:05 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/07 12:54:06 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ Fixed &Fixed::operator++(){
 }
 
 Fixed Fixed::operator++(int i){
+    i = 1;
     Fixed old(*this);
     operator++();
     return (old);
@@ -117,6 +118,7 @@ Fixed &Fixed::operator--(){
 }
 
 Fixed Fixed::operator--(int i){
+    i = 1;
     Fixed old(*this);
     operator--();
     return (old);
@@ -133,11 +135,6 @@ int Fixed::getRawBits(void) const{
     return (this->_fixedPointValue);
 }
 
-const int Fixed::getFracBits(void){
-    std::cout << "getFracBits member function called" << std::endl;
-    return (this->_fracBits);
-}
-
 void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
@@ -152,6 +149,14 @@ float Fixed::toFloat(void) const{
 int Fixed::toInt() const
 {
 	return this->_fixedPointValue >> _fracBits;
+}
+
+Fixed Fixed::min(const Fixed a, const Fixed b){
+    return ((a.toInt() < b.toInt() ) ? a : b);
+}
+
+Fixed Fixed::max(const Fixed a, const Fixed b){
+    return ((a.toInt() > b.toInt() ) ? a : b);
 }
 
 

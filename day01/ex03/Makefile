@@ -6,7 +6,7 @@
 #    By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 08:28:51 by xrhoda            #+#    #+#              #
-#    Updated: 2019/06/04 13:49:09 by xrhoda           ###   ########.fr        #
+#    Updated: 2019/06/07 07:06:43 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ HDRS     = Zombie.hpp ZombieHorde.hpp
 OBJS     = $(SRCS:%.cpp=%.o)
 
 CXX      = clang++
-# CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
+CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 all: $(NAME)
 

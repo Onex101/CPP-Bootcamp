@@ -6,12 +6,13 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:04:27 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/06 13:43:23 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/07 07:15:41 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_CLASS_HPP
 # define FIXED_CLASS_HPP
+#include <iostream>
 
 class Fixed
 {

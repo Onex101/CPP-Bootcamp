@@ -6,14 +6,14 @@
 #    By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 08:28:51 by xrhoda            #+#    #+#              #
-#    Updated: 2019/06/07 07:06:05 by xrhoda           ###   ########.fr        #
+#    Updated: 2019/06/07 07:05:49 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     = fixed
+NAME     = replace
 
-SRCS     = Fixed.cpp main.cpp
-HDRS     = Fixed.hpp
+SRCS     = main.cpp FragTrap.cpp
+HDRS     = FragTrap.hpp
 OBJS     = $(SRCS:%.cpp=%.o)
 
 CXX      = clang++
