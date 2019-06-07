@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:20:57 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/07 12:24:34 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/07 16:01:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main(void){
     FragTrap ft("ClapTrap");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:21:03 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/07 12:03:50 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/07 16:13:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,15 @@
 #define SCAVTRAP_H
 
 #include <iostream>
+#include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
-	private:
-		std::string _name;
-		unsigned  int _hitPnts;
-		unsigned int _maxHitPnts;
-		unsigned int _energyPnts;
-		unsigned int _maxEnergyPnts;
-		unsigned int _level;
-		unsigned int _melleeAttckDmg;
-		unsigned int _rangedAttckDmg;
-		unsigned int _armourDmgReduc;
-
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string);
 		~ScavTrap(void);
-
-		void rangedAttack(std::string const & target);
-		void meleeAttack(std::string const & target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-        void challengeNewComer(void);
-
-		ScavTrap &operator=(ScavTrap const &other);
-
+		void challengeNewComer(void);
 };
 
 #endif

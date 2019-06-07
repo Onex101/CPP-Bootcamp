@@ -3,21 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 08:28:51 by xrhoda            #+#    #+#              #
-#    Updated: 2019/06/07 12:16:42 by xrhoda           ###   ########.fr        #
+#    Updated: 2019/06/07 16:17:08 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME     = replace
 
-SRCS     = main.cpp FragTrap.cpp ScavTrap.cpp
-HDRS     = FragTrap.hpp ScavTrap.hpp
+SRCS     = main.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp
+HDRS     = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
 OBJS     = $(SRCS:%.cpp=%.o)
 
 CXX      = clang++
-CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
+CXXFLAGS = -std=c++11 -Wall -Werror -Wextra
 
 all: $(NAME)
 

@@ -3,45 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 13:18:33 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/07 13:19:35 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/07 15:55:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void):
-	_name("NoNameBrandon")
-	,_hitPnts(100)
-	,_maxHitPnts(100)
-	,_energyPnts(100)
-	,_maxEnergyPnts(100)
-	,_level(1)
-	,_melleeAttckDmg(30)
-	,_rangedAttckDmg(20)
-	,_armourDmgReduc(5)
-{
-	std::cout << this->_name << " says: Don't forget me!" << std::endl;
+ClapTrap::ClapTrap(void){
+	this->_name = "";
+	this->_hitPnts = 0;
+	this->_maxHitPnts = 0;
+	this->_energyPnts = 0;
+	this->_maxEnergyPnts = 0;
+	this->_level = 0;
+	this->_melleeAttckDmg = 0;
+	this->_rangedAttckDmg = 0;
+	this->_armourDmgReduc = 0;
+	std::cout << this->_name << " says: Im really weak!" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void){
-	std::cout << this->_name << " says: For you...I commit...seddoku..." << std::endl;
+	std::cout << this->_name << " says: I'm tired. Im going to go take a nap." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name):
-	_name(name)
-	,_hitPnts(100)
-	,_maxHitPnts(100)
-	,_energyPnts(100)
-	,_maxEnergyPnts(100)
-	,_level(1)
-	,_melleeAttckDmg(30)
-	,_rangedAttckDmg(20)
-	,_armourDmgReduc(5)
-{
-	std::cout << this->_name << " says: Ha ha ha! I, LIVE! Hahaha!" << std::endl;
+ClapTrap::ClapTrap(std::string name){
+	this->_name = name;
+	this->_hitPnts = 0;
+	this->_maxHitPnts = 0;
+	this->_energyPnts = 0;
+	this->_maxEnergyPnts = 0;
+	this->_level = 0;
+	this->_melleeAttckDmg = 0;
+	this->_rangedAttckDmg = 0;
+	this->_armourDmgReduc = 0;
+	std::cout << this->_name << " says: Some stats would be nice" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &other){
