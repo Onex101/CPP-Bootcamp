@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 13:18:33 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/07 15:55:31 by marvin           ###   ########.fr       */
+/*   Updated: 2019/06/07 16:19:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &other){
 	this->_armourDmgReduc = other._armourDmgReduc;
 	return (*this); 
 }
-
 
 void ClapTrap::rangedAttack(std::string const & target){
 	std:: cout << "FR4G-TP " << this->_name <<" attacks " << target << " at range , causing "<< this->_rangedAttckDmg << " points of damage !" << std::endl;
