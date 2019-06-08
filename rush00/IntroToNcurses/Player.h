@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Player.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 15:20:57 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/08 12:08:13 by xrhoda           ###   ########.fr       */
+/*   Created: 2019/06/08 09:42:16 by xrhoda            #+#    #+#             */
+/*   Updated: 2019/06/08 09:51:36 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "NinjaTrap.hpp"
-#include "FragTrap.hpp"
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef PLAYER_H
+#define PLAYER_H
 
-int main(void){
-    FragTrap ft("ClapTrap");
-    ScavTrap st("SapTrap");
-    ScavTrap test(st);
-    NinjaTrap nt("test");
-    nt.ninjaShoebox(st);
-    ft.takeDamage(40);
-    ft.vaulthunter_dot_exe("Badass");
-    ft.beRepaired(10);
-    ft.rangedAttack("Skag");
+#include <ncurses.h>
 
-    st.challengeNewComer();
-    return 0;
-}
+class Player
+{
+    private:
+        int x;
+        int y;
+        int xMax;
+        int yMax;
+        char c;
+        WINDOW *win;
+    public:
+        Player(WINDOW *win, int x, int y, char c);
+        ~Player();
+        void moveUp();
+        void moveDown();
+        void moveLeft();
+        void moveRight();
+        void display();
+};
+
+#endif

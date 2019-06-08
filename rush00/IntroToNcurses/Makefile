@@ -6,23 +6,24 @@
 #    By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 08:28:51 by xrhoda            #+#    #+#              #
-#    Updated: 2019/06/08 12:04:52 by xrhoda           ###   ########.fr        #
+#    Updated: 2019/06/08 08:58:48 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME     = replace
+NAME     = ncurse
 
-SRCS     = main.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp
-HDRS     = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp
+SRCS     = main.cpp 
+HDRS     = 
 OBJS     = $(SRCS:%.cpp=%.o)
 
 CXX      = clang++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
+INC = -lncurses
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HDRS)
-	@$(CXX) $(OBJS) -o $@
+	@$(CXX) $(INC) $(OBJS) -o $@
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
