@@ -6,11 +6,12 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 10:24:10 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 13:18:50 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 09:38:25 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void){
 	this->_grade = 1;
@@ -134,13 +135,5 @@ std::ostream &operator<< (std::ostream &out, const Bureaucrat &other)
 }
 
 void			Bureaucrat::executeForm(Form const &form){
-	if (this->_grade < form.getExecuteGrade())
-	{
-		std::cout << "Bureaucrat " << this->_name << " executes " << form.getName() << std::endl;
-		form.execute(*this);
-	}
-	else
-		std::cout << "Bureaucrat " << this->_name << " grade is too low (" << this->_grade << "). They need a grade of "
-			<< form.getExecuteGrade() << " to execute " << form.getName() << std::endl;
-	return;
+
 }

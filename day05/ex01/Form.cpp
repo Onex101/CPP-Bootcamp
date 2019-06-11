@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.wethinkcode.co.z    +#+  +:+       +#+        */
+/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 14:33:03 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/10 14:33:03 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 07:55:07 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ std::ostream			&operator<<(std::ostream &out, Form const &rhs)
 {
 	out << "_______Form Details_______" << std::endl
 		<< "Name: " << rhs.getName() << std::endl
-		<< "Signing Grade Requirement: " << rhs.getSigned() << std::endl
+		<< "Signing Grade Requirement: " << rhs.getSignGrade() << std::endl
 		<< "Execution Grade Requirement: " << rhs.getExecuteGrade() << std::endl;
 	if(rhs.getSigned())
 			out << "Form is signed." << std::endl;

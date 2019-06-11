@@ -6,11 +6,15 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 10:24:10 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 13:18:50 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 09:56:30 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void){
 	this->_grade = 1;
