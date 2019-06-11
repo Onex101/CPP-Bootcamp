@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xrhoda <xrhoda@student.wethinkcode.co.z    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 06:34:54 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 13:20:20 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 15:57:55 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,20 @@ Intern &Intern::operator=(Intern const &rhs)
 
 Form        *Intern::makeForm(std::string formName, std::string formTarget)
 {
-    std::for_each(formName.begin(), formName.end(), [](char & c) {
-		c = ::toupper(c);
-	});
-    if (formName.find("ROBOTOMY") != std::string::npos) {
+    std::locale settings;
+    std::string converted;
+    for(int i = 0; i < (int)formName.size(); ++i)
+		converted += (std::toupper(formName[i], settings));
+    if (converted.find("ROBOTOMY") != std::string::npos) {
+        std::cout << "Intern creates ROBOTOMY Form" << std::endl;
         return new RobotomyRequestForm(formTarget);
     }
-    else if (formName.find("PRESIDENTIAL") != std::string::npos) {
+    else if (converted.find("PRESIDENTIAL") != std::string::npos) {
+        std::cout << "Intern creates PRESIDENTIAL Form" << std::endl;
         return new PresidentialPardonForm(formTarget);
     }
-    else if (formName.find("SHRUBBERY") != std::string::npos) {
+    else if (converted.find("SHRUBBERY") != std::string::npos) {
+        std::cout << "Intern creates SHRUBBERY Form" << std::endl;
         return new ShrubberyCreationForm(formTarget);
     }
     else{

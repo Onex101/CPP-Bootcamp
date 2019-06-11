@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xrhoda <xrhoda@student.wethinkcode.co.z    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 10:24:12 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 07:54:08 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 20:20:21 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,22 @@ int main(void)
         f.beSigned(low);
         f.execute(low);
         //scf.beSigned(b);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << "    " << e.what() << std::endl;
+    }
+     {
+        Intern    someRandomIntern;
+        Form*    rrf;
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    }
+    try{
+        Bureaucrat a("Bot", 1);
+        Intern    someRandomIntern;
+        Form*    rrf;
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+        rrf->execute(a);
     }
     catch (std::exception & e)
     {
