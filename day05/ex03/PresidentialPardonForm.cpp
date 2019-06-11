@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xrhoda <xrhoda@student.wethinkcode.co.z    +#+  +:+       +#+        */
+/*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:19:17 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/10 17:19:17 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 13:21:11 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form(target
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &obj) : Form(obj.getName(), 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &other) : Form(other.getName(), 72, 45)
 {
-	*this = obj;
+	*this = other;
 	return;
 }
 

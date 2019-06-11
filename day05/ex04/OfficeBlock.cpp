@@ -6,13 +6,13 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:42:26 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 12:53:40 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 13:21:11 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "OfficeBlock.hpp"
 
-OfficeBlock::OfficeBlock(Intern& intern,Bureaucrat& signer,Bureaucrat& executioner):_intern(intern), _signer(signer), _exectioner(executioner){
+OfficeBlock::OfficeBlock(Intern& intern,Bureaucrat& signer,Bureaucrat& executioner):_intern(&intern), _signer(&signer), _exectioner(&executioner){
     return;
 }
 OfficeBlock::~OfficeBlock(){
@@ -20,19 +20,48 @@ OfficeBlock::~OfficeBlock(){
 } 
 
 void OfficeBlock::setIntern(Intern& intern){
- this->_intern = intern;
+ this->_intern = &intern;
 }
 void OfficeBlock::setSigner(Bureaucrat& signer){
-    this->_signer = signer;
+    this->_signer = &signer;
 }
 void OfficeBlock::setExecutioner(Bureaucrat& executioner){
-    this->_exectioner = executioner;
+    this->_exectioner = &executioner;
 }
 
 void OfficeBlock::doBureaucracy(std::string formName, std::string target){
-    Form *f = this->_intern.makeForm(formName, target);
-    f->beSigned(this->_signer);
-    this->_exectioner.executeForm(*f);
+	
+	if (!this->_intern){	
+		throw OfficeBlock::NoInternException();
+		return;
+	}
+	if (!this->_signer){	
+		throw OfficeBlock::NoSignerException();
+		return;
+	}
+	if (!this->_exectioner){	
+		throw OfficeBlock::NoExecuterException();
+		return;
+	}
+
+	Form *f = this->_intern->makeForm(formName, target);
+
+	if (this->_signer->getGrade() > f->getSignGrade()){
+		delete f;
+		throw OfficeBlock::SignerLowGradeException();
+		return;	
+	}
+	f->beSigned(*this->_signer);
+
+	if (this->_exectioner->getGrade() > f->getExecuteGrade()){
+		delete f;
+		throw OfficeBlock::ExecuterLowGradeException();
+		return;	
+	}
+	this->_exectioner->executeForm(*f);
+
+	delete f;
+	return;
 }
 
 //No Intern Exception
