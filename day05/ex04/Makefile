@@ -6,14 +6,14 @@
 #    By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 08:28:51 by xrhoda            #+#    #+#              #
-#    Updated: 2019/06/11 07:34:25 by xrhoda           ###   ########.fr        #
+#    Updated: 2019/06/11 13:41:19 by xrhoda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME     = bureaucrat
 
-SRCS     = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
-HDRS     = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp Intern.hpp
+SRCS     = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp OfficeBlock.cpp
+HDRS     = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp Intern.hpp OfficeBlock.hpp
 OBJS     = $(SRCS:%.cpp=%.o)
 
 CXX      = clang++

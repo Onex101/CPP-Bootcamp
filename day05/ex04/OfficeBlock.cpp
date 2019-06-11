@@ -6,11 +6,15 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:42:26 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 13:21:11 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 13:42:18 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "OfficeBlock.hpp"
+
+OfficeBlock::OfficeBlock(void):_intern(NULL), _signer(NULL), _exectioner(NULL){
+    return;
+} 
 
 OfficeBlock::OfficeBlock(Intern& intern,Bureaucrat& signer,Bureaucrat& executioner):_intern(&intern), _signer(&signer), _exectioner(&executioner){
     return;

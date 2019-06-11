@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 10:23:59 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 13:16:12 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 13:30:37 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+
+class Form;
 
 class Bureaucrat
 {

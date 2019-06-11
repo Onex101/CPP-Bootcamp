@@ -6,7 +6,7 @@
 /*   By: xrhoda <xrhoda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 10:24:12 by xrhoda            #+#    #+#             */
-/*   Updated: 2019/06/11 07:54:08 by xrhoda           ###   ########.fr       */
+/*   Updated: 2019/06/11 13:48:55 by xrhoda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,57 +17,38 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+#include "OfficeBlock.hpp"
 
-int main(void)
+int main()
 {
-    try{
-        Bureaucrat high("high", 1);
-	    Bureaucrat low("low", 150);
-
-        Intern i;
-        Form *f = i.makeForm("Shrubbery", "Onex"); 
-        std::cout << *f << std::endl;
-
+    Intern idiotOne;
+    Bureaucrat hermes = Bureaucrat("Hermes Conrad", 37);
+    Bureaucrat bob = Bureaucrat("Bobby Bobson", 123);
+    OfficeBlock ob;
+    ob.setIntern(idiotOne);
+    ob.setSigner(bob);
+    ob.setExecutioner(hermes);
+    try
+    {
+        ob.doBureaucracy("ShrubberyCreationForm", "Pigley");
     }
-    catch (ShrubberyCreationForm::GradeTooLowException &e)
+    catch (OfficeBlock::NoInternException & e)
     {
         std::cout << "    " << e.what() << std::endl;
     }
-
-    try{
-        Bureaucrat high("high", 1);
-	    Bureaucrat low("low", 150);
-
-        RobotomyRequestForm f("Test");
-        std::cout << f << std::endl;
-
-        low.setGrade(20);
-        f.beSigned(low);
-        f.execute(low);
-        //scf.beSigned(b);
-    }
-    catch (std::exception & e)
-    {
+    catch (OfficeBlock::NoSignerException & e){
         std::cout << "    " << e.what() << std::endl;
     }
-
-    try{
-        Bureaucrat high("high", 1);
-	    Bureaucrat low("low", 150);
-
-        PresidentialPardonForm f("Test");
-        std::cout << f << std::endl;
-
-        low.setGrade(100);
-        f.beSigned(low);
-        f.execute(low);
-        //scf.beSigned(b);
-    }
-    catch (std::exception & e)
-    {
+    catch (OfficeBlock::NoExecuterException & e){
         std::cout << "    " << e.what() << std::endl;
     }
-    
-    
-    return 1;
+    catch (OfficeBlock::ExecuterLowGradeException & e){
+        std::cout << "    " << e.what() << std::endl;
+    }
+    catch (OfficeBlock::SignerLowGradeException & e){
+        std::cout << "    " << e.what() << std::endl;
+    }
+    catch (std::exception &e){
+        std::cout << "    " << e.what() << std::endl;
+    }
 }
